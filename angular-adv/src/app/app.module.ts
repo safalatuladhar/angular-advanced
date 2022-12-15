@@ -9,18 +9,23 @@ import { TodoModule } from './forms/todo/todo.module';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { todoReducer } from './forms/todo/store/todo.reducer';
+import { HeaderComponent } from './components/header/header.component';
+import { HeaderModule } from './components/header/header.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({todoState: todoReducer}),
     BrowserAnimationsModule,
     TodoModule,
     MaterialModule,
+    HeaderModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [],

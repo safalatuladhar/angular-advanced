@@ -9,12 +9,12 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
-    background: #020203;
+    background: white;
     color: #ffffff;
 }
 
 .card {
-    background: #161616 !important;
+    background: white !important;
     margin: 20px;
     width: 70%;
 }
