@@ -12,23 +12,22 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { todoReducer } from './forms/todo/store/todo.reducer';
 import { HeaderComponent } from './components/header/header.component';
 import { HeaderModule } from './components/header/header.module';
+import { VoidComponent } from './void/void.component';
+import { userLoginReducer } from './StoreLogin/login.reducer';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-
-  ],
+  declarations: [AppComponent, VoidComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({todoState: todoReducer}),
+    StoreModule.forRoot({ userLoginState: userLoginReducer }),
     BrowserAnimationsModule,
     TodoModule,
     MaterialModule,
     HeaderModule,
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

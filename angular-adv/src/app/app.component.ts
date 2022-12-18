@@ -6,10 +6,12 @@ import { pipe, filter, map, Observable, Subscription, Subject, from } from 'rxjs
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
-  title = 'angular-adv';
+export class AppComponent {
+  isLoggedin:  boolean = false;
 
-  ngOnInit(): void{
-    
+  isAuthenticated(): boolean{
+    return this.isLoggedin;
   }
+
+ 
 }
